@@ -26,17 +26,17 @@
 ----------------------------
 local modname = minetest.get_current_modname()
 local modpath = minetest.get_modpath(modname)
-local add_capes = minetest.setting_getbool("capes_add_to_3darmor")
-local example_cape = minetest.setting_getbool("example_cape")
-local fly_anim = minetest.setting_getbool("fly_anim")
-local fall_anim = minetest.setting_getbool("fall_anim")
-local fall_tv = minetest.setting_getbool("fall_tv") or 100
+local add_capes = minetest.settings:get_bool("capes_add_to_3darmor")
+local example_cape = minetest.settings:get_bool("example_cape")
+local fly_anim = minetest.settings:get_bool("fly_anim")
+local fall_anim = minetest.settings:get_bool("fall_anim")
+local fall_tv = minetest.settings:get_bool("fall_tv") or 100
 	  fall_tv = -1*(fall_tv/3.7)                             -- Convert kp/h back to number of -y blocks per 0.05 of a second.
-local swim_anim = minetest.setting_getbool("swim_anim")
-local swim_sneak = minetest.setting_getbool("swim_sneak")
-local climb_anim = minetest.setting_getbool("climb_anim")
-local crouch_anim = minetest.setting_getbool("crouch_anim")
-local crouch_sneak = minetest.setting_getbool("crouch_sneak")
+local swim_anim = minetest.settings:get_bool("swim_anim")
+local swim_sneak = minetest.settings:get_bool("swim_sneak")
+local climb_anim = minetest.settings:get_bool("climb_anim")
+local crouch_anim = minetest.settings:get_bool("crouch_anim")
+local crouch_sneak = minetest.settings:get_bool("crouch_sneak")
  
 -- catch setting nil, need "if" as boolean 
 if add_capes    == nil then add_capes    = true end 
